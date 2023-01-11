@@ -44,8 +44,6 @@ const FlashCard = ({ productItems, addToCart }) => {
 
   return (
     <>
-
-
       <Slider {...settings}>
 
         {productItems.map((productItems) => {
@@ -53,8 +51,8 @@ const FlashCard = ({ productItems, addToCart }) => {
             <div className='box'>
               <div className='product mtop'>
                 <div className='img'>
-                  <span className='discount'>{productItems.discount}% Off</span>
-                  <img src={productItems.cover} alt='' />
+                  <span className='discountPercentage'>{productItems.discountPercentage}% Off</span>
+                  <img src={productItems.thumbnail} alt='' />
                   <div className='product-like'>
                     <label>{count}</label> <br />
                     <i className='fa-regular fa-heart' onClick={increment}></i>
@@ -63,7 +61,7 @@ const FlashCard = ({ productItems, addToCart }) => {
 
 
                 <div className='product-details'>
-                  <h3>{productItems.name}</h3>
+                  <h3>{productItems.title}</h3>
                   <div className='rate'>
                     <i className='fa fa-star'></i>
                     <i className='fa fa-star'></i>

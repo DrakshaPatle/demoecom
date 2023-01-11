@@ -1,13 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./App.css"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Header from "./common/header/Header"
- import Pages from "./pages/Pages"
+import Pages from "./pages/Pages"
 import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
 import Login from "./common/Login/login"
 import Footer from "./common/footer/Footer"
- import Sdata from "./components/shops/Sdata"
+import Sdata from "./components/shops/Sdata"
+import API from "./components/API"
 
 function App() {
   /*
@@ -22,8 +23,17 @@ function App() {
   Step 4 :  addToCart lai chai pass garne using props in pages and cart components
   */
 
-  //Step 1 :
-  const { productItems } = Data
+  // Fetch all the products ONLY ONCE the page loads
+  const [productItems, setProductItems] = useState([]);
+  useEffect(() => {
+    if (productItems.length == 0) {
+      API.get('/products').then(response => {
+        console.log(response.data.products);
+        setProductItems(response.data.products);
+      })
+    }
+  })
+
   const { shopItems } = Sdata
 
   //Step 2 :
@@ -81,9 +91,9 @@ function App() {
             <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />
           </Route>
 
-          <Route exact path = "/login" element ={<login/>}>
-            </Route>
-         
+          <Route exact path="/login" element={<login />}>
+          </Route>
+
         </Switch>
         <Footer />
       </Router>

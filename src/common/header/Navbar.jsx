@@ -28,19 +28,21 @@ const Navbar = () => {
                 <Link to='/'>home</Link>
               </li>
               <li>
-                <Link to='/pages'>pages</Link>
+                <Link to='/about'>about</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to='/user'>user account</Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link to='/vendor'>vendor account</Link>
-              </li>
-              <li>
-                <Link to='/track'>track my order</Link>
-              </li>
+              </li> */}
+             
               <li>
                 <Link to='/contact'>contact</Link>
+              </li>
+
+              <li>
+                <Link to='/login'>login</Link>
               </li>
             </ul>
 

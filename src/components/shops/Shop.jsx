@@ -6,7 +6,7 @@ import "./style.css"
 const Shop = ({ addToCart, shopItems }) => {
   return (
     <>
-      <section className='shop background'>
+      {/* <section className='shop background'>
         <div className='container d_flex'>
           <Catg />
 
@@ -25,7 +25,7 @@ const Shop = ({ addToCart, shopItems }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }

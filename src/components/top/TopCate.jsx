@@ -5,7 +5,7 @@ import TopCart from "./TopCart"
 const TopCate = () => {
   return (
     <>
-      <section className='TopCate background'>
+      {/* <section className='TopCate background'>
         <div className='container'>
           <div className='heading d_flex'>
             <div className='heading-left row  f_flex'>
@@ -19,7 +19,7 @@ const TopCate = () => {
           </div>
           <TopCart />
         </div>
-      </section>
+      </section> */}
     </>
   )
 }

@@ -5,6 +5,7 @@ import Header from "./common/header/Header"
  import Pages from "./pages/Pages"
 import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
+import Login from "./common/Login/login"
 import Footer from "./common/footer/Footer"
  import Sdata from "./components/shops/Sdata"
 
@@ -75,9 +76,14 @@ function App() {
           <Route path='/' exact>
             <Pages productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
           </Route>
+
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />
           </Route>
+
+          <Route exact path = "/login" element ={<login/>}>
+            </Route>
+         
         </Switch>
         <Footer />
       </Router>

@@ -26,7 +26,7 @@ const Wrapper = () => {
   ]
   return (
     <>
-      <section className='wrapper background'>
+      {/* <section className='wrapper background'>
         <div className='container grid2'>
           {data.map((val, index) => {
             return (
@@ -40,7 +40,7 @@ const Wrapper = () => {
             )
           })}
         </div>
-      </section>
+      </section> */}
     </>
   )
 }

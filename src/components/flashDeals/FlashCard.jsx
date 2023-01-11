@@ -13,6 +13,8 @@ const SampleNextArrow = (props) => {
     </div>
   )
 }
+
+
 const SamplePrevArrow = (props) => {
   const { onClick } = props
   return (
@@ -26,8 +28,10 @@ const SamplePrevArrow = (props) => {
 const FlashCard = ({ productItems, addToCart }) => {
   const [count, setCount] = useState(0)
   const increment = () => {
-    setCount(count + 1)
+    setCount(count + 2)
   }
+
+
   const settings = {
     dots: false,
     infinite: true,
@@ -40,7 +44,10 @@ const FlashCard = ({ productItems, addToCart }) => {
 
   return (
     <>
+
+
       <Slider {...settings}>
+
         {productItems.map((productItems) => {
           return (
             <div className='box'>
@@ -53,6 +60,8 @@ const FlashCard = ({ productItems, addToCart }) => {
                     <i className='fa-regular fa-heart' onClick={increment}></i>
                   </div>
                 </div>
+
+
                 <div className='product-details'>
                   <h3>{productItems.name}</h3>
                   <div className='rate'>
@@ -62,8 +71,11 @@ const FlashCard = ({ productItems, addToCart }) => {
                     <i className='fa fa-star'></i>
                     <i className='fa fa-star'></i>
                   </div>
+
+
                   <div className='price'>
                     <h4>${productItems.price}.00 </h4>
+
                     {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}

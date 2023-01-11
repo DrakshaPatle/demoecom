@@ -67,3 +67,41 @@ const Categories = () => {
 }
 
 export default Categories
+
+
+
+
+
+
+// import  React ,{useState,usEffect}
+//  from 'react'
+// import { useEffect } from "react"
+//  export default function Reg(){
+//   const [productList,setProductList]= useState([]);
+// useEffect(()=>{
+//   axios.get('https://fakestoreapi').then(res=>res.json()).then(products)=>{
+//     console.log(products);
+//     setProductList(productList);
+//   }).catch()
+
+//  },[])
+//  return (
+//   <div>
+//     productlist.map((product))=>{
+
+//       return<div key ={product.url}>
+
+//       </div>
+//     }
+//   </div>
+//  )
+
+
+
+
+// })
+
+
+
+//  }
+  

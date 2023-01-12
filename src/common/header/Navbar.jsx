@@ -14,7 +14,7 @@ const Navbar = () => {
 
 
             <h4>
-              Categories <i className='fa fa-chevron-down'></i>
+              ProductList<i className='fa fa-chevron-down'></i>
             </h4>
             
           </div>

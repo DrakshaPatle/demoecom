@@ -1,50 +1,33 @@
-.signin-container {
+/* /* body {
+    height: 100vh;
     display: flex;
     justify-content: center;
-    padding-top: 150px;
-}
-
-.signin-form {
+    align-items: center;
+  } */
+  /* .title {
+    text-align: center;
+    width: 30vw;
+    background-color: rgb(190, 164, 214);
+    padding: 2vw 1vw;
+    border-radius: 10px 10px 0 0;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .App {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border: 1px solid rgb(224, 224, 224);
+    margin: auto;
+    width: 30vw;
+    padding: 2vw 1vw;
+    background-color: rgb(250, 194, 194);
+    border-radius: 0 0 10px 10px;
+  }
+  input {
+    border: 1px solid rgb(172, 171, 171);
     border-radius: 10px;
-    width: 350px;
-    /* background-color: rgb(78, 78, 78); */
-}
-
-.signin-form p {
-    font-size: 30px;
-}
-
-.signin-form label {
-    padding: 0px;
-    margin-top: 15px;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-.signin-form input {
-    margin: 2px 0px;
-    border-radius: 5px;
-    padding: 5px;
-    border: 2px solid rgb(154, 154, 154);
-    font-size: 18px;
-}
-
-.signin-form input:focus {
-    outline: 2px solid orange;
-    border: none;
-}
-
-.signin-form button {
-    background-color: rgb(255, 176, 29);
-    margin: 20px 0px;
-    border: none;
-    font-size: 20px;
-    color: white;
-    font-weight: 600;
-    border-radius: 10px;
-    padding: 5px;
-}
+    padding: 1vw 1vw;
+    outline: none;
+    margin: 5px;
+  }
+   */ 

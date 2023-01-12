@@ -1,77 +1,22 @@
-import React, { useState } from 'react'
-// import Navbar from './Navbar'
-import './login.css'
-import { Link } from 'react-router-dom'
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from 'react-router-dom'
+// // Inside src/App.js
 
+// import React from "react";
+// import "./Login.css";
 
-const Login = () => {
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("")
-    const [errorMsg, setErrorMsg] = useState("")
-    const [successMsg, setSuccessMsg] = useState("")
+// const Login=()=> {
+//   return (
+//     <>
+//       <p className="title">Registration Form</p>
 
-    // const auth = getAuth();
-    // const navigate = useNavigate()
+//       <form className="App">
+//         <input type="text" />
+//         <input type="email" />
+//         <input type="password" />
+//         <input type={"submit"} 
+//           style={{ backgroundColor: "#a1eafb" }} />
+//       </form>
+//     </>
+//   );
+// }
 
-
-    // const handleLogin = (e) => {
-    //     e.preventDefault();
-    //     signInWithEmailAndPassword(auth, email, password)
-    //         .then((userCredential) => {
-    //             setSuccessMsg('Logged in successfully, you will be redirected to homepage')
-
-    //             // console.log(loggeduser.email)
-    //             setEmail('')
-    //             setPassword('')
-    //             setErrorMsg('')
-    //             setTimeout(() => {
-    //                 setSuccessMsg('');
-    //                 // navigate('/home');
-    //             }, 3000);
-    //         })
-    //         .catch((error) => {
-    //             const errorCode = error.code;
-    //             console.log(error.message)
-    //             if (error.message == 'Firebase: Error (auth/invalid-email).') {
-    //                 setErrorMsg('Please fill all required fields')
-    //             }
-    //             if (error.message == 'Firebase: Error (auth/user-not-found).') {
-    //                 setErrorMsg('Email not found');
-    //             }
-    //             if (error.message == 'Firebase: Error (auth/wrong-password).') {
-    //                 setErrorMsg('Wrong Password');
-    //             }
-    //         });
-    // }
-
-    return (
-        <div>
-            <Navbar />
-            <div className='signin-container'>
-                <form className='signin-form'>
-                    <p>Login</p>
-                    {successMsg && <>
-                        <div className='success-msg'>{successMsg}</div>
-                    </>}
-                    {errorMsg && <>
-                        <div className='error-msg'>{errorMsg}</div>
-                    </>}
-                    <label>Email</label>
-                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email" />
-                    <label>Password</label>
-                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter your password" />
-                    {/* <button onClick={handleLogin}>Login</button> */}
-                    <button >Login</button>
-                    <div>
-                        <span>Don't have an account ?</span>
-                        <Link to="/signup">Sign up</Link>
-                    </div>
-                </form>
-            </div>
-        </div>
-    )
-}
-
-export default Login
+// export default Login;

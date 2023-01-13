@@ -4,9 +4,9 @@ import API from "./API";
 // import "slick-carousel/slick/slick.css"
 // import "slick-carousel/slick/slick-theme.css"
 import { Link } from "react-router-dom";
-// import "./ProductCard.css"
+ import "./ProductCard.css"
 // import 'bootstrap/dist/css/bootstrap.css';
-// import Button from '@material-ui/core/Button'; 
+// import Button from '@material-ui'; 
 
 
 const FlashCard = ({ addToCart }) => {
@@ -32,7 +32,7 @@ const FlashCard = ({ addToCart }) => {
             {productsList.map((product) => {
                 return (
                     <>
-                        <div class="card-group">
+                        <div class="grid-container">
                             <div className='box'>
                                 <div className='product mtop'>
                                     <div className='img'>
@@ -70,6 +70,86 @@ const FlashCard = ({ addToCart }) => {
                                 </div>
                             </div>
                             </div>
+
+
+                            <div class="grid-container">
+                            <div className='box'>
+                                <div className='product mtop'>
+                                    <div className='img'>
+                                        <span className='discount'>{product.discountPercentage}% Off</span>
+                                        <Link to={`/description/${product.id}`}>
+                                        <img src={product.thumbnail} alt='' />
+                                        </Link>
+                                        <div className='product-like'>
+                                            <label>{count}</label> <br />
+                                            <i className='fa-regular fa-heart' onClick={increment}></i>
+                                        </div>
+                                    </div>
+
+
+                                    <div className='product-details'>
+                                        <h3>{product.title}</h3>
+                                        <div className='rate'>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                        </div>
+
+
+                                        <div className='price'>
+                                            <h4>${product.price}.00 </h4>
+
+
+                                            <button onClick={() => addToCart(product)}>
+                                                <i className='fa fa-plus'></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="grid-container">
+                            <div className='box'>
+                                <div className='product mtop'>
+                                    <div className='img'>
+                                        <span className='discount'>{product.discountPercentage}% Off</span>
+                                        <Link to={`/description/${product.id}`}>
+                                        <img src={product.thumbnail} alt='' />
+                                        </Link>
+                                        <div className='product-like'>
+                                            <label>{count}</label> <br />
+                                            <i className='fa-regular fa-heart' onClick={increment}></i>
+                                        </div>
+                                    </div>
+
+
+                                    <div className='product-details'>
+                                        <h3>{product.title}</h3>
+                                        <div className='rate'>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                            <i className='fa fa-star'></i>
+                                        </div>
+
+
+                                        <div className='price'>
+                                            <h4>${product.price}.00 </h4>
+
+
+                                            <button onClick={() => addToCart(product)}>
+                                                <i className='fa fa-plus'></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+
                     </>
                 )
             })}

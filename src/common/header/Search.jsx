@@ -2,7 +2,7 @@ import React from "react"
 import logo from "../../components/assets/images/logo.svg"
 import { Link } from "react-router-dom"
 
-const Search = ({ CartItem }) => {
+const Search = ({ CartItems }) => {
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search")
@@ -34,7 +34,7 @@ const Search = ({ CartItem }) => {
             <div className='cart'>
               <Link to='/cart'>
                 <i className='fa fa-shopping-bag icon-circle'></i>
-                <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+                <span>{CartItems.length === 0 ? "" : CartItems.length}</span>
               </Link>
             </div>
 

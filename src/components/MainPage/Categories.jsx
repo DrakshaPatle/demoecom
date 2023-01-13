@@ -1,8 +1,15 @@
-import React from "react"
-
-
+import React, { useEffect, useState } from "react"
+import API from "../API";
+import { Link } from 'react-router-dom'
 
 const Categories = () => {
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    if (categories.length == 0) {
+      const response = API.get("/products/categories/").then(response => setCategories(response.data))
+    }
+  })
+
   const data = [
     {
       cateImg: "./images/category/cat1.png",
@@ -50,14 +57,34 @@ const Categories = () => {
     },
   ]
 
+  // return (
+  //   <>
+  //     <div className='category'>
+  //       {data.map((value, index) => {
+  //         return (
+  //           <div className='box f_flex' key={index}>
+  //             {/* <img src={value.cateImg} alt='' /> */}
+  //             <span>{value.cateName}</span>
+  //           </div>
+  //         )
+  //       })}
+  //     </div>
+  //   </>
+  // )
+
+
   return (
     <>
       <div className='category'>
-        {data.map((value, index) => {
+        {categories.map((category, index) => {
           return (
             <div className='box f_flex' key={index}>
-              <img src={value.cateImg} alt='' />
-              <span>{value.cateName}</span>
+
+              <span>
+                <Link to={`category-items/${category}`}>
+                  {category}
+                </Link>
+              </span>
             </div>
           )
         })}
@@ -104,4 +131,3 @@ export default Categories
 
 
 //  }
-  

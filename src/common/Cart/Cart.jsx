@@ -23,10 +23,10 @@ const Cart = ({ CartItems, addToCart, decreaseQty }) => {
               return (
                 <div className='cart-list product d_flex' key={item.id}>
                   <div className='img'>
-                    <img src={item.cover} alt='' />
+                    <img src={item.thumbnail} alt='' />
                   </div>
                   <div className='cart-details'>
-                    <h3>{item.name}</h3>
+                    <h3>{item.title}</h3>
 
                     <h4>
                       ${item.price}.00 * {item.qty}

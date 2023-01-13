@@ -39,6 +39,7 @@ function App() {
   const [category, setCategory] = useState(null);
 
   const [CartItems, setCartItems] = useState([])
+
   const addToCart = (product) => {
     const productExit = CartItems.find((item) => item.id === product.id)
     if (productExit) {
@@ -47,6 +48,8 @@ function App() {
       setCartItems([...CartItems, { ...product, qty: 1 }])
     }
   }
+
+  
   const decreaseQty = (product) => {
     const productExit = CartItems.find((item) => item.id === product.id)
     if (productExit.qty === 1) {

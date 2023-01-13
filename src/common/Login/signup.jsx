@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 // import Navbar from './Navbar'
 import './login.css'
 import { Link } from 'react-router-dom'
-import { signInWithEmailAndPassword } from '@firebase/auth'
+import { createUserWithEmailAndPassword } from '@firebase/auth'
 import { auth } from '../../firebaseconfig'
 import { useHistory } from 'react-router-dom'
 
-const Login = () => {
+const Signup = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("")
     const [errorMsg, setErrorMsg] = useState("")
@@ -14,14 +14,14 @@ const Login = () => {
     const history = useHistory()
     const handleLogin = (e) => {
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                setSuccessMsg('Logged in successfully, you will be redirected to homepage')
 
-                console.log(userCredential.user);
+                setSuccessMsg('Logged in successfully, you will be redirected to homepage')
                 setEmail(userCredential.user.email)
                 setPassword(userCredential.user.password)
                 localStorage.setItem('email', email);
+                localStorage.setItem('password', password);
                 setTimeout(() => {
                     setSuccessMsg('');
                     history.push('/home');
@@ -47,7 +47,7 @@ const Login = () => {
             {/* <Navbar /> */}
             <div className='signin-container'>
                 <form className='signin-form'>
-                    <p>Login</p>
+                    <p>Signup</p>
                     {successMsg && <>
                         <div className='success-msg'>{successMsg}</div>
                     </>}
@@ -58,15 +58,12 @@ const Login = () => {
                     <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email" />
                     <label>Password</label>
                     <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter your password" />
-                    <button onClick={handleLogin}>Login</button>
-                    <div>
-                        <span>Don't have an account ?</span>
-                        <Link to="/signup">Sign up</Link>
-                    </div>
+                    <button onClick={handleLogin}>Signup</button>
+
                 </form>
             </div>
         </div>
     )
 }
 
-export default Login;
+export default Signup;

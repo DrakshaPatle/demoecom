@@ -11,7 +11,7 @@ const CategoryItems = ({addToCart}) => {
     const products_route = "/products/category/" + category;
     useEffect(() => {
         if (productsList.length == 0) {
-            const response = API.get(products_route, { params: { total: 10, limit: 10 } }).then(response => setProductsList(response.data.products));
+            const response = API.get(products_route).then(response => setProductsList(response.data.products));
         }
     })
     return (

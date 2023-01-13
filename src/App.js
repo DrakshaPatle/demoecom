@@ -12,6 +12,8 @@ import Sdata from "./components/shops/Sdata"
 import Categories from "./Categories"
 import CategoryItems from "./components/CategoryItems"
 import ProductDescription from "./ProductDescription"
+import Signup from "./common/Login/signup"
+import Logout from "./common/Login/logout"
 
 function App() {
   const { productItems } = Data;
@@ -55,6 +57,7 @@ function App() {
       setCartItems(CartItems.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty - 1 } : item)))
     }
   }
+
   return (
     <>
       <Router>
@@ -63,15 +66,23 @@ function App() {
           <Route path='/' exact>
             <Pages productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
           </Route>
+          <Route path='/home' exact>
+            <Pages productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
+          </Route>
 
           <Route path='/cart' exact>
             <Cart CartItems={CartItems} addToCart={addToCart} decreaseQty={decreaseQty} />
           </Route>
 
-          <Route exact path="/login" element={<login />}>
+          <Route exact path="/login">
+            <Login></Login>
           </Route>
-
-          <Route exact  path="/category-items/:category">
+        
+          <Route exact path="/signup">
+            <Signup></Signup>
+          </Route>
+          
+          <Route exact path="/category-items/:category">
             <CategoryItems addToCart={addToCart} ></CategoryItems>
           </Route>
 

@@ -1,6 +1,9 @@
 import React from "react"
 import logo from "../../components/assets/images/logo.svg"
 import { Link } from "react-router-dom"
+import '../Login/login.css'
+import { auth } from '../../firebaseconfig'
+
 
 const Search = ({ CartItems }) => {
   // fixed Header
@@ -8,6 +11,12 @@ const Search = ({ CartItems }) => {
     const search = document.querySelector(".search")
     search.classList.toggle("active", window.scrollY > 100)
   })
+
+
+  const handleLogout = () => {
+    auth.signOut();
+    localStorage.removeItem('email');
+  }
 
   return (
     <>
@@ -24,11 +33,20 @@ const Search = ({ CartItems }) => {
             <span>All Category</span>
           </div>
 
+
           <div className='icon f_flex width'>
-          <div className='login'>
-            <Link to='/login'>
-              <i className='fa fa-user icon-circle'></i>
-            </Link>
+
+            {localStorage.getItem('email') != null &&
+              <>
+                {localStorage.getItem('email').split("@")[0]}
+                <div className="btn btn-primary" onClick={() => handleLogout()}>
+                </div>
+              </>
+            }
+            <div className='login'>
+              <Link to='/login'>
+                <i className='fa fa-user icon-circle'></i>
+              </Link>
 
             </div>
             <div className='cart'>

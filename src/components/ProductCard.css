@@ -1,0 +1,24 @@
+.flash {
+    background: #f6f9fc;
+    padding: 50px 0;
+  }
+  
+
+  .grid-container {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 550px 500px 50px; /*Make the grid smaller than the container*/
+    grid-template-columns: repeat(6, 1fr);
+    gap: 200px;
+    background-color: #474849;
+    grid-auto-flow: column;
+ 
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(9, 9, 9, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }

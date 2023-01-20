@@ -3,9 +3,9 @@ import { useEffect } from "react"
 import { useParams } from "react-router";
 import API from "./API"
 import "./CategoryItems.css";
-import ProductCard from "./ProductCard" 
+import ProductCard from "./ProductCard"
 
-const CategoryItems = ({addToCart}) => {
+const CategoryItems = ({ addToCart }) => {
     const { category } = useParams();
     const [productsList, setProductsList] = useState([]);
     const products_route = "/products/category/" + category;
@@ -14,10 +14,15 @@ const CategoryItems = ({addToCart}) => {
             const response = API.get(products_route).then(response => setProductsList(response.data.products));
         }
     })
+
+    const [msg, setMsg] = useState(null);
+
     return (
-        productsList.map((product_obj) =>
-            <ProductCard addToCart={addToCart} ></ProductCard>
-        )
+        <>
+
+            {msg && <div className="msg"> {msg} </div>}
+            {productsList.map(product_obj => <ProductCard setMsg={setMsg} product={product_obj} key={product_obj.id} addToCart={addToCart} ></ProductCard>)}
+        </>
     )
 }
 

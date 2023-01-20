@@ -3,8 +3,10 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 import{getAuth }from "firebase/auth";
-import{getFirestore}from "firebase/firestore";
+import{getFirestore, collection}from "firebase/firestore";
 import{getStorage} from "firebase/storage";
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyBR8C0TW-OpD-PM67oVmAGDYutJJuxWZfA",
   authDomain: "ecommerce-82666.firebaseapp.com",
@@ -21,3 +23,4 @@ const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const storage = getStorage(app);
 export const db = getFirestore(app);
+// export const wishlistCollectionRef = collection(db, 'wishlist');
